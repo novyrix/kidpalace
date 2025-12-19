@@ -61,7 +61,7 @@ const features = [
 
 const GradeSchool = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-32">
       {/* Hero Section */}
       <section className="relative bg-blue-900 py-20 lg:py-28">
         <div className="absolute inset-0 opacity-30">

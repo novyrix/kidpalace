@@ -212,7 +212,7 @@ const Admissions = () => {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-32">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] bg-gray-900">
         <div className="absolute inset-0">

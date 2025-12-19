@@ -55,7 +55,7 @@ const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 pt-32 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={aboutHeroImg}

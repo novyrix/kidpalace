@@ -32,9 +32,9 @@ import kindergartenImg from '../../assets/images/kindergarten/kindergarten-1.jpg
 
 // Portal links for Staff, Students, Parents
 const portalLinks = [
-  { label: 'Staff Portal', href: '#staff-portal', icon: UserCircle },
-  { label: 'Student Portal', href: '#student-portal', icon: GraduationCap },
-  { label: 'Parent Portal', href: '#parent-portal', icon: Users },
+  { label: 'Staff Portal', href: '#', icon: UserCircle, comingSoon: true },
+  { label: 'Student Portal', href: '#', icon: GraduationCap, comingSoon: true },
+  { label: 'Parent Portal', href: '#', icon: Users, comingSoon: true },
 ];
 
 const Header = () => {
@@ -91,8 +91,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-gray-900 text-white">
+      {/* Top Bar - Fixed */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white">
         <div className="container-custom">
           <div className="flex h-10 items-center justify-between text-sm">
             {/* Left side - Contact info */}
@@ -125,7 +125,7 @@ const Header = () => {
                 onMouseLeave={handlePortalLeave}
               >
                 <button
-                  className="flex items-center gap-1.5 rounded bg-gray-800 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-gray-700"
+                  className="flex items-center gap-1.5 rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
                   onClick={() => setIsPortalOpen(!isPortalOpen)}
                 >
                   <UserCircle className="h-4 w-4" />
@@ -140,19 +140,23 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 4 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute right-0 top-full z-50 mt-1 w-48 overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200"
+                      className="absolute right-0 top-full z-[60] mt-2 w-56 overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200"
                       onMouseEnter={handlePortalEnter}
                       onMouseLeave={handlePortalLeave}
                     >
                       {portalLinks.map((portal) => (
-                        <a
-                          key={portal.href}
-                          href={portal.href}
-                          className="flex items-center gap-3 px-4 py-3 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                        <div
+                          key={portal.label}
+                          className="flex items-center justify-between gap-3 px-4 py-3 text-gray-400 cursor-not-allowed"
                         >
-                          <portal.icon className="h-4 w-4 text-gray-500" />
-                          <span className="font-medium">{portal.label}</span>
-                        </a>
+                          <div className="flex items-center gap-3">
+                            <portal.icon className="h-4 w-4 text-gray-400" />
+                            <span className="font-medium">{portal.label}</span>
+                          </div>
+                          <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-medium">
+                            Coming Soon
+                          </span>
+                        </div>
                       ))}
                     </motion.div>
                   )}
@@ -165,7 +169,7 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className={`fixed left-0 right-0 top-10 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-10 z-40 transition-all duration-300 ${
           isScrolled
             ? 'bg-white/95 shadow-lg backdrop-blur-md'
             : 'bg-white shadow-sm'
