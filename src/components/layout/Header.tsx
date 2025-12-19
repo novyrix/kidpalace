@@ -97,13 +97,13 @@ const Header = () => {
           <div className="flex h-10 items-center justify-between text-sm">
             {/* Left side - Contact info */}
             <div className="hidden items-center gap-4 md:flex">
-              <a href="tel:+254700000000" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
+              <a href="tel:+254712247074" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
                 <Phone className="h-3.5 w-3.5" />
-                <span>+254 700 000 000</span>
+                <span>0712 247074</span>
               </a>
-              <a href="mailto:info@kidpalace.co.ke" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
+              <a href="mailto:info@kidpalaceschools.ac.ke" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
                 <Mail className="h-3.5 w-3.5" />
-                <span>info@kidpalace.co.ke</span>
+                <span>info@kidpalaceschools.ac.ke</span>
               </a>
               <span className="flex items-center gap-1.5 text-gray-300">
                 <MapPin className="h-3.5 w-3.5" />
@@ -180,9 +180,9 @@ const Header = () => {
             aria-label="Kid Palace Schools Home"
           >
             <img 
-              src="/logos/kid palace logo-01transparent.png" 
+              src="/logos/Kidpalace grade school logo-transparent.png" 
               alt="Kid Palace Schools" 
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
             <div className="hidden sm:block">
               <span className="font-['Playfair_Display'] text-gray-900 block text-lg leading-tight">

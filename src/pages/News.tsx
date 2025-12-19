@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { Calendar, ArrowRight, Bell, Newspaper, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button } from '../components/ui';
+import { Button, SocialFeed } from '../components/ui';
 
 import newsImg1 from '../assets/images/education/education-1.jpg';
 import newsImg2 from '../assets/images/sports/sports-1.jpg';
@@ -300,6 +300,35 @@ const News = () => {
             <Button variant="outline" size="lg">
               View All News
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Social Media Feed Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <h2 className="font-['Playfair_Display'] text-3xl font-bold text-gray-900 md:text-4xl">
+              Connect With Us
+            </h2>
+            <p className="mt-2 text-lg text-gray-600">
+              Follow our social media for real-time updates and behind-the-scenes moments
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <SocialFeed />
           </motion.div>
         </div>
       </section>

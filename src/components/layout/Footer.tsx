@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -5,14 +6,25 @@ import {
   Mail,
   Clock,
   Facebook,
-  Twitter,
   Instagram,
   ArrowRight,
+  Send,
 } from 'lucide-react';
 import { contactInfo } from '../../constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail('');
+      setTimeout(() => setSubscribed(false), 3000);
+    }
+  };
 
   const quickLinks = [
     { label: 'About Us', path: '/about' },
@@ -64,9 +76,9 @@ const Footer = () => {
               className="mb-6 flex items-center gap-3"
             >
               <img 
-                src="/logos/kid palace logo-01transparent.png" 
+                src="/logos/Kidpalace grade school logo-transparent.png" 
                 alt="Kid Palace Schools" 
-                className="h-14 w-auto"
+                className="h-16 w-auto"
               />
               <div>
                 <span className="font-['Playfair_Display'] text-white block text-lg leading-tight">
@@ -77,26 +89,26 @@ const Footer = () => {
                 </span>
               </div>
             </Link>
+            <p className="mb-4 text-sm italic text-yellow-400">
+              "Learn To Transform"
+            </p>
             <p className="mb-6 leading-relaxed text-gray-400">
               The preferred place for knowledge transformation where every child is guaranteed success through quality education.
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/kidpalaceschools"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg bg-gray-800 p-2.5 text-gray-400 transition-all hover:bg-blue-600 hover:text-white"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="rounded-lg bg-gray-800 p-2.5 text-gray-400 transition-all hover:bg-sky-500 hover:text-white"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/kidpalaceschools"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg bg-gray-800 p-2.5 text-gray-400 transition-all hover:bg-pink-600 hover:text-white"
                 aria-label="Instagram"
               >
@@ -191,6 +203,40 @@ const Footer = () => {
                 <span className="text-gray-400">{contactInfo.hours}</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Newsletter Section */}
+      <div className="border-t border-gray-800 bg-gray-800/50">
+        <div className="container-custom py-12">
+          <div className="mx-auto max-w-2xl text-center">
+            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-white md:text-3xl">
+              Be in the Know
+            </h3>
+            <p className="mt-3 text-gray-400">
+              Subscribe to our newsletter for the latest news, events, and updates from Kid Palace Schools.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="flex-1 max-w-md rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-white placeholder-gray-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                required
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-yellow-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:bg-yellow-400"
+              >
+                {subscribed ? 'Subscribed!' : 'Subscribe'}
+                <Send className="h-4 w-4" />
+              </button>
+            </form>
+            {subscribed && (
+              <p className="mt-3 text-green-400">Thank you for subscribing! We'll keep you updated.</p>
+            )}
           </div>
         </div>
       </div>
