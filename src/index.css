@@ -1,11 +1,16 @@
 @import "tailwindcss";
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/500.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/700.css";
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 @import "@fontsource/poppins/600.css";
 @import "@fontsource/poppins/700.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
 
 /* Custom CSS Variables for Design Tokens */
 :root {
@@ -30,9 +35,10 @@
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
 
-  /* Typography */
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  /* Typography - Playfair Display for academic headings, Nunito for friendly body text */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Nunito', 'Poppins', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
 }
 
 /* Base Styles */

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import {
-  GraduationCap,
   MapPin,
   Phone,
   Mail,
@@ -37,7 +36,7 @@ const Footer = () => {
         <div className="container-custom py-12">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div>
-              <h3 className="font-['Poppins'] text-2xl font-bold text-white md:text-3xl">
+              <h3 className="font-['Playfair_Display'] text-2xl font-bold text-white md:text-3xl">
                 Ready to Join <span className="text-yellow-400">Kid Palace</span>?
               </h3>
               <p className="mt-2 text-gray-400">
@@ -62,14 +61,21 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link
               to="/"
-              className="mb-6 flex items-center gap-2 text-xl font-bold"
+              className="mb-6 flex items-center gap-3"
             >
-              <div className="rounded-xl bg-blue-500/10 p-2">
-                <GraduationCap className="h-8 w-8 text-blue-400" />
+              <img 
+                src="/logos/kid palace logo-01transparent.png" 
+                alt="Kid Palace Schools" 
+                className="h-14 w-auto"
+              />
+              <div>
+                <span className="font-['Playfair_Display'] text-white block text-lg leading-tight">
+                  Kid Palace
+                </span>
+                <span className="font-['Nunito'] text-red-400 text-sm font-semibold">
+                  Schools
+                </span>
               </div>
-              <span className="font-['Poppins'] text-white">
-                Kid Palace <span className="text-red-400">Schools</span>
-              </span>
             </Link>
             <p className="mb-6 leading-relaxed text-gray-400">
               The preferred place for knowledge transformation where every child is guaranteed success through quality education.

@@ -16,20 +16,36 @@ import {
   Sparkles,
   Heart,
   Image,
-  Newspaper
+  Newspaper,
+  UserCircle,
+  Trophy,
+  Music,
+  Palette,
+  MapPin,
+  Clock,
+  Mail
 } from 'lucide-react';
 
 // Import images
 import gradeSchoolImg from '../../assets/images/grade-school/grade-school-1.jpg';
 import kindergartenImg from '../../assets/images/kindergarten/kindergarten-1.jpg';
 
+// Portal links for Staff, Students, Parents
+const portalLinks = [
+  { label: 'Staff Portal', href: '#staff-portal', icon: UserCircle },
+  { label: 'Student Portal', href: '#student-portal', icon: GraduationCap },
+  { label: 'Parent Portal', href: '#parent-portal', icon: Users },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+  const [isPortalOpen, setIsPortalOpen] = useState(false);
   const location = useLocation();
   const megaMenuTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const portalTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +59,7 @@ const Header = () => {
     setIsMenuOpen(false);
     setActiveMegaMenu(null);
     setMobileDropdown(null);
+    setIsPortalOpen(false);
   }, [location]);
 
   const isActive = (path: string) => {
@@ -61,28 +78,120 @@ const Header = () => {
     }, 150);
   };
 
+  const handlePortalEnter = () => {
+    if (portalTimeout.current) clearTimeout(portalTimeout.current);
+    setIsPortalOpen(true);
+  };
+
+  const handlePortalLeave = () => {
+    portalTimeout.current = setTimeout(() => {
+      setIsPortalOpen(false);
+    }, 150);
+  };
+
   return (
-    <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 shadow-lg backdrop-blur-md'
-          : 'bg-white shadow-sm'
-      }`}
-    >
+    <>
+      {/* Top Bar */}
+      <div className="bg-gray-900 text-white">
+        <div className="container-custom">
+          <div className="flex h-10 items-center justify-between text-sm">
+            {/* Left side - Contact info */}
+            <div className="hidden items-center gap-4 md:flex">
+              <a href="tel:+254700000000" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
+                <Phone className="h-3.5 w-3.5" />
+                <span>+254 700 000 000</span>
+              </a>
+              <a href="mailto:info@kidpalace.co.ke" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
+                <Mail className="h-3.5 w-3.5" />
+                <span>info@kidpalace.co.ke</span>
+              </a>
+              <span className="flex items-center gap-1.5 text-gray-300">
+                <MapPin className="h-3.5 w-3.5" />
+                <span>Ongata Rongai, Kenya</span>
+              </span>
+            </div>
+
+            {/* Right side - Portal Dropdown */}
+            <div className="flex items-center gap-4 ml-auto">
+              <div className="flex items-center gap-1.5 text-gray-300">
+                <Clock className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Mon-Fri: 7:00 AM - 5:00 PM</span>
+              </div>
+              
+              {/* Portal Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={handlePortalEnter}
+                onMouseLeave={handlePortalLeave}
+              >
+                <button
+                  className="flex items-center gap-1.5 rounded bg-gray-800 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-gray-700"
+                  onClick={() => setIsPortalOpen(!isPortalOpen)}
+                >
+                  <UserCircle className="h-4 w-4" />
+                  <span>Portals</span>
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isPortalOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isPortalOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-0 top-full z-50 mt-1 w-48 overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200"
+                      onMouseEnter={handlePortalEnter}
+                      onMouseLeave={handlePortalLeave}
+                    >
+                      {portalLinks.map((portal) => (
+                        <a
+                          key={portal.href}
+                          href={portal.href}
+                          className="flex items-center gap-3 px-4 py-3 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                        >
+                          <portal.icon className="h-4 w-4 text-gray-500" />
+                          <span className="font-medium">{portal.label}</span>
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <header
+        className={`fixed left-0 right-0 top-10 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/95 shadow-lg backdrop-blur-md'
+            : 'bg-white shadow-sm'
+        }`}
+      >
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className="group flex items-center gap-2.5 text-xl font-bold"
+            className="group flex items-center gap-3 text-xl font-bold"
             aria-label="Kid Palace Schools Home"
           >
-            <div className="rounded-xl bg-gray-900 p-2">
-              <GraduationCap className="h-6 w-6 text-yellow-400" />
+            <img 
+              src="/logos/kid palace logo-01transparent.png" 
+              alt="Kid Palace Schools" 
+              className="h-12 w-auto"
+            />
+            <div className="hidden sm:block">
+              <span className="font-['Playfair_Display'] text-gray-900 block text-lg leading-tight">
+                Kid Palace
+              </span>
+              <span className="font-['Nunito'] text-red-600 text-sm font-semibold tracking-wide">
+                Schools
+              </span>
             </div>
-            <span className="font-['Poppins'] text-gray-900">
-              Kid Palace <span className="text-red-600">Schools</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -303,7 +412,7 @@ const Header = () => {
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeMegaMenu === 'explore' ? 'rotate-180' : ''}`} />
                 </button>
 
-                {/* Explore Dropdown */}
+                {/* Explore Mega Menu */}
                 <AnimatePresence>
                   {activeMegaMenu === 'explore' && (
                     <motion.div
@@ -311,41 +420,117 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute right-0 top-full z-50 w-64 pt-4"
+                      className="absolute right-0 top-full z-50 w-[600px] pt-4"
                       onMouseEnter={() => handleMegaMenuEnter('explore')}
                       onMouseLeave={handleMegaMenuLeave}
                     >
-                      <div className="overflow-hidden rounded-xl bg-white p-2 shadow-2xl ring-1 ring-gray-200">
-                        <Link
-                          to="/school-life"
-                          className="flex items-center gap-3 rounded-lg px-4 py-3 transition-colors hover:bg-gray-50"
-                        >
-                          <Heart className="h-5 w-5 text-red-500" />
-                          <div>
-                            <span className="block font-medium text-gray-900">School Life</span>
-                            <span className="block text-xs text-gray-500">Activities & culture</span>
+                      <div className="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-gray-200">
+                        <div className="grid grid-cols-2">
+                          {/* School Life Column */}
+                          <div className="p-6 border-r border-gray-100">
+                            <h3 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                              <Heart className="h-4 w-4" />
+                              School Life
+                            </h3>
+                            <div className="space-y-1">
+                              <Link
+                                to="/school-life"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                              >
+                                <Heart className="h-5 w-5 text-red-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Campus Life</span>
+                                  <span className="block text-xs text-gray-400">Daily activities & culture</span>
+                                </div>
+                              </Link>
+                              <Link
+                                to="/school-life#sports"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                              >
+                                <Trophy className="h-5 w-5 text-yellow-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Sports & Athletics</span>
+                                  <span className="block text-xs text-gray-400">Games & competitions</span>
+                                </div>
+                              </Link>
+                              <Link
+                                to="/school-life#clubs"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                              >
+                                <Music className="h-5 w-5 text-purple-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Clubs & Activities</span>
+                                  <span className="block text-xs text-gray-400">Music, drama & more</span>
+                                </div>
+                              </Link>
+                              <Link
+                                to="/school-life#arts"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                              >
+                                <Palette className="h-5 w-5 text-pink-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Arts & Creativity</span>
+                                  <span className="block text-xs text-gray-400">Visual arts & crafts</span>
+                                </div>
+                              </Link>
+                            </div>
                           </div>
-                        </Link>
-                        <Link
-                          to="/gallery"
-                          className="flex items-center gap-3 rounded-lg px-4 py-3 transition-colors hover:bg-gray-50"
-                        >
-                          <Image className="h-5 w-5 text-purple-500" />
-                          <div>
-                            <span className="block font-medium text-gray-900">Gallery</span>
-                            <span className="block text-xs text-gray-500">Photos & memories</span>
+
+                          {/* Media & Updates Column */}
+                          <div className="p-6 bg-gray-50">
+                            <h3 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                              <Newspaper className="h-4 w-4" />
+                              Media & Updates
+                            </h3>
+                            <div className="space-y-1">
+                              <Link
+                                to="/gallery"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-white hover:text-gray-900"
+                              >
+                                <Image className="h-5 w-5 text-blue-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Photo Gallery</span>
+                                  <span className="block text-xs text-gray-400">Memories & moments</span>
+                                </div>
+                              </Link>
+                              <Link
+                                to="/news"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-white hover:text-gray-900"
+                              >
+                                <Newspaper className="h-5 w-5 text-green-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">News & Events</span>
+                                  <span className="block text-xs text-gray-400">Latest happenings</span>
+                                </div>
+                              </Link>
+                              <Link
+                                to="/news#calendar"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-700 transition-colors hover:bg-white hover:text-gray-900"
+                              >
+                                <Calendar className="h-5 w-5 text-orange-500" />
+                                <div>
+                                  <span className="block text-sm font-medium">Events Calendar</span>
+                                  <span className="block text-xs text-gray-400">Upcoming events</span>
+                                </div>
+                              </Link>
+                            </div>
+
+                            {/* Quick Action */}
+                            <div className="mt-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 p-4 text-white">
+                              <h4 className="font-semibold">Virtual Tour</h4>
+                              <p className="mt-1 text-sm text-white/80">
+                                Explore our campus online
+                              </p>
+                              <Link
+                                to="/contact"
+                                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-yellow-300 transition-colors hover:text-yellow-200"
+                              >
+                                Schedule a Visit
+                                <ArrowRight className="h-4 w-4" />
+                              </Link>
+                            </div>
                           </div>
-                        </Link>
-                        <Link
-                          to="/news"
-                          className="flex items-center gap-3 rounded-lg px-4 py-3 transition-colors hover:bg-gray-50"
-                        >
-                          <Newspaper className="h-5 w-5 text-blue-500" />
-                          <div>
-                            <span className="block font-medium text-gray-900">News & Events</span>
-                            <span className="block text-xs text-gray-500">Latest updates</span>
-                          </div>
-                        </Link>
+                        </div>
                       </div>
                     </motion.div>
                   )}
@@ -521,6 +706,7 @@ const Header = () => {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 };
 
