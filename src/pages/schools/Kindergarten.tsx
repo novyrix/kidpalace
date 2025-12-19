@@ -92,11 +92,11 @@ const Kindergarten = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-24 md:pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Kid Palace Kindergarten"
+            alt="Kidpalace Kindergarten"
             className="h-full w-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-gray-900/60" />
@@ -108,7 +108,7 @@ const Kindergarten = () => {
               Ages 6 months - 6 years
             </span>
             <h1 className="mt-6 font-['Poppins'] text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-              Kid Palace <span className="text-yellow-400">Kindergarten</span>
+              Kidpalace <span className="text-yellow-400">Kindergarten</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300">
               An exclusive school for little ones, providing nurturing care and
@@ -144,7 +144,7 @@ const Kindergarten = () => {
                 Where Little Ones Thrive
               </h2>
               <p className="mt-6 text-gray-600 leading-relaxed">
-                Kid Palace Kindergarten is located in a pleasant, homely and quiet
+                Kidpalace Kindergarten is located in a pleasant, homely and quiet
                 environment far from the noisy road, providing the perfect setting
                 for early childhood development.
               </p>
@@ -313,7 +313,7 @@ const Kindergarten = () => {
             className="text-center"
           >
             <span className="text-sm font-semibold uppercase tracking-wider text-yellow-600">
-              A Day at Kid Palace
+              A Day at Kidpalace
             </span>
             <h2 className="mt-3 font-['Poppins'] text-3xl font-bold text-gray-900 md:text-4xl">
               Sample Daily Schedule
@@ -446,7 +446,7 @@ const Kindergarten = () => {
               Give Your Child the Best Start
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-              Join the Kid Palace Kindergarten family and give your little one a
+              Join the Kidpalace Kindergarten family and give your little one a
               nurturing environment to grow and learn.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">

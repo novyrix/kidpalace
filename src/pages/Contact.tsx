@@ -63,7 +63,7 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section - Enhanced */}
-      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-24 md:pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={heroImg}
@@ -97,7 +97,7 @@ const Contact = () => {
               className="mt-6 text-xl text-gray-300"
             >
               We'd love to hear from you! Reach out for admissions inquiries,
-              school visits, or any questions about Kid Palace Schools.
+              school visits, or any questions about Kidpalace Schools.
             </motion.p>
             <motion.div
               variants={fadeIn}
@@ -355,7 +355,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Kid Palace Schools Location"
+                  title="Kidpalace Schools Location"
                   className="h-full w-full"
                 />
               </div>

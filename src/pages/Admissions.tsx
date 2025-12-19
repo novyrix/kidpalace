@@ -71,7 +71,7 @@ const admissionSteps = [
   {
     step: 5,
     title: 'Welcome!',
-    description: 'Receive your admission letter, complete enrollment, and join the Kid Palace family!',
+    description: 'Receive your admission letter, complete enrollment, and join the Kidpalace family!',
     icon: GraduationCap,
     color: 'bg-rose-500',
   },
@@ -212,7 +212,7 @@ const Admissions = () => {
   };
 
   return (
-    <div className="pt-32">
+    <div className="pt-20 md:pt-32">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] bg-gray-900">
         <div className="absolute inset-0">
@@ -239,7 +239,7 @@ const Admissions = () => {
               <span className="block text-yellow-400">Journey With Us</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="mt-6 text-lg text-gray-300 md:text-xl">
-              Join the Kid Palace Schools family and give your child the foundation
+              Join the Kidpalace Schools family and give your child the foundation
               for a lifetime of learning and success.
             </motion.p>
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap gap-4">
@@ -559,8 +559,8 @@ const Admissions = () => {
                           className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3.5 pr-12 text-gray-900 transition-all focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
                         >
                           <option value="">Select school...</option>
-                          <option value="kindergarten">Kid Palace Kindergarten</option>
-                          <option value="grade-school">Kid Palace Grade School</option>
+                          <option value="kindergarten">Kidpalace Kindergarten</option>
+                          <option value="grade-school">Kidpalace Grade School</option>
                         </select>
                         <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
                       </div>

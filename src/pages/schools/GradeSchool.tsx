@@ -61,13 +61,13 @@ const features = [
 
 const GradeSchool = () => {
   return (
-    <div className="pt-32">
+    <div className="pt-20 md:pt-32">
       {/* Hero Section */}
       <section className="relative bg-blue-900 py-20 lg:py-28">
         <div className="absolute inset-0 opacity-30">
           <img
             src={heroImg}
-            alt="Kid Palace Grade School"
+            alt="Kidpalace Grade School"
             className="h-full w-full object-cover"
           />
         </div>
@@ -76,7 +76,7 @@ const GradeSchool = () => {
             Grades 1-9
           </div>
           <h1 className="mt-4 font-['Poppins'] text-4xl font-bold md:text-5xl">
-            Kid Palace Grade School
+            Kidpalace Grade School
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-blue-100">
             The primary vision of the institution is to execute a learning
@@ -105,12 +105,12 @@ const GradeSchool = () => {
               </h2>
               <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-red-500" />
               <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-                Kid Palace Grade School offers comprehensive education for
+                Kidpalace Grade School offers comprehensive education for
                 children in Grades 1-9, following the Competency-Based
                 Curriculum (CBC) designed to develop well-rounded individuals.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                With carefully thought out and implemented Kid Palace specifics,
+                With carefully thought out and implemented Kidpalace specifics,
                 the school carves a niche for itself as the preferred place for
                 knowledge transformation where every child is guaranteed
                 success.
@@ -244,7 +244,7 @@ const GradeSchool = () => {
       <section className="py-16 lg:py-24">
         <div className="container-custom text-center">
           <h2 className="font-['Poppins'] text-3xl font-bold text-gray-900 md:text-4xl">
-            Ready to Join Kid Palace Grade School?
+            Ready to Join Kidpalace Grade School?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
             Give your child the foundation for academic excellence and personal

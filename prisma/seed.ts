@@ -22,7 +22,7 @@ async function main() {
       excerpt:
         'Join us for our annual sports day celebration featuring various athletic competitions across all age groups.',
       content:
-        'Kid Palace Schools is excited to invite all parents and guardians to our Annual Sports Day 2025. The event will feature track and field events, team sports, and fun activities for all age groups. Refreshments will be available.',
+        'Kidpalace Schools is excited to invite all parents and guardians to our Annual Sports Day 2025. The event will feature track and field events, team sports, and fun activities for all age groups. Refreshments will be available.',
       imageUrl: '/images/sports/sports-1.jpg',
       published: true,
       publishedAt: new Date('2025-12-05'),

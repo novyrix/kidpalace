@@ -11,7 +11,7 @@ const SocialFeed = ({ className = '' }: SocialFeedProps) => {
         Follow Us on Social Media
       </h3>
       <p className="text-gray-600 mb-6">
-        Stay connected with Kid Palace Schools! Follow us on our social media platforms for the latest updates, photos, and announcements.
+        Stay connected with Kidpalace Schools! Follow us on our social media platforms for the latest updates, photos, and announcements.
       </p>
       
       <div className="grid gap-4 sm:grid-cols-2">

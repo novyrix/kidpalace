@@ -105,7 +105,7 @@ const News = () => {
   const regularArticles = newsArticles.filter((article) => !article.featured);
 
   return (
-    <div className="pt-32">
+    <div className="pt-20 md:pt-32">
       {/* Hero Section */}
       <section className="relative bg-gray-900 py-20 lg:py-28">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-50" />
@@ -125,7 +125,7 @@ const News = () => {
             </motion.h1>
             <motion.p variants={fadeInUp} className="mx-auto mt-6 max-w-2xl text-lg text-gray-400 md:text-xl">
               Stay updated with the latest news, events, and announcements from
-              Kid Palace Schools
+              Kidpalace Schools
             </motion.p>
           </motion.div>
         </div>
@@ -241,7 +241,7 @@ const News = () => {
               Latest Updates
             </h2>
             <p className="mt-2 text-lg text-gray-600">
-              All the news and announcements from Kid Palace Schools
+              All the news and announcements from Kidpalace Schools
             </p>
           </motion.div>
 

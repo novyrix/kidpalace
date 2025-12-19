@@ -76,11 +76,11 @@ const Academics = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-24 md:pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Academics at Kid Palace"
+            alt="Academics at Kidpalace"
             className="h-full w-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900" />
@@ -119,7 +119,7 @@ const Academics = () => {
                 Competency-Based Learning
               </h2>
               <p className="mt-6 text-gray-600 leading-relaxed">
-                Kid Palace Schools implements the Competency-Based Curriculum (CBC),
+                Kidpalace Schools implements the Competency-Based Curriculum (CBC),
                 which focuses on developing skills and competencies rather than
                 just knowledge acquisition.
               </p>
@@ -386,7 +386,7 @@ const Academics = () => {
               Ready to Start Your Child's Academic Journey?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-300">
-              Discover the Kid Palace difference and give your child the education they deserve.
+              Discover the Kidpalace difference and give your child the education they deserve.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button as="link" to="/admissions" variant="white" size="lg">

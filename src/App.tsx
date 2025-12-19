@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,13 +13,19 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import './index.css';
 
-// Scroll to top on route change
+// Scroll to top on route change - use useLayoutEffect for immediate scroll before paint
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  useLayoutEffect(() => {
+    // Immediate scroll
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
+
+  // Also scroll on initial mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   return null;
 }

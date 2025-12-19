@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
-  X,
   ChevronDown,
   GraduationCap,
   Baby,
@@ -25,6 +24,7 @@ import {
   Clock,
   Mail
 } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 
 // Import images
 import gradeSchoolImg from '../../assets/images/grade-school/grade-school-1.jpg';
@@ -41,7 +41,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
-  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [isPortalOpen, setIsPortalOpen] = useState(false);
   const location = useLocation();
   const megaMenuTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -58,7 +57,6 @@ const Header = () => {
   useEffect(() => {
     setIsMenuOpen(false);
     setActiveMegaMenu(null);
-    setMobileDropdown(null);
     setIsPortalOpen(false);
   }, [location]);
 
@@ -91,12 +89,12 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar - Fixed */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white">
+      {/* Top Bar - Fixed (hidden on mobile) */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white hidden md:block">
         <div className="container-custom">
           <div className="flex h-10 items-center justify-between text-sm">
             {/* Left side - Contact info */}
-            <div className="hidden items-center gap-4 md:flex">
+            <div className="flex items-center gap-4">
               <a href="tel:+254712247074" className="flex items-center gap-1.5 text-gray-300 transition-colors hover:text-white">
                 <Phone className="h-3.5 w-3.5" />
                 <span>0712 247074</span>
@@ -112,10 +110,10 @@ const Header = () => {
             </div>
 
             {/* Right side - Portal Dropdown */}
-            <div className="flex items-center gap-4 ml-auto">
+            <div className="flex items-center gap-4">
               <div className="flex items-center gap-1.5 text-gray-300">
                 <Clock className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Mon-Fri: 7:00 AM - 5:00 PM</span>
+                <span>Mon-Fri: 7:00 AM - 5:00 PM</span>
               </div>
               
               {/* Portal Dropdown */}
@@ -169,30 +167,30 @@ const Header = () => {
 
       {/* Main Header */}
       <header
-        className={`fixed left-0 right-0 top-10 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? 'bg-white/95 shadow-lg backdrop-blur-md'
             : 'bg-white shadow-sm'
-        }`}
+        } top-0 md:top-10`}
       >
       <div className="container-custom">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className="group flex items-center gap-3 text-xl font-bold"
-            aria-label="Kid Palace Schools Home"
+            className="group flex items-center gap-2 md:gap-3 text-xl font-bold"
+            aria-label="Kidpalace Schools Home"
           >
             <img 
               src="/logos/Kidpalace grade school logo-transparent.png" 
-              alt="Kid Palace Schools" 
-              className="h-14 w-auto"
+              alt="Kidpalace Schools" 
+              className="h-10 md:h-14 w-auto"
             />
-            <div className="hidden sm:block">
-              <span className="font-['Playfair_Display'] text-gray-900 block text-lg leading-tight">
-                Kid Palace
+            <div className="hidden xs:block sm:block">
+              <span className="font-['Playfair_Display'] text-gray-900 block text-sm md:text-lg leading-tight">
+                Kidpalace
               </span>
-              <span className="font-['Nunito'] text-red-600 text-sm font-semibold tracking-wide">
+              <span className="font-['Nunito'] text-red-600 text-xs md:text-sm font-semibold tracking-wide">
                 Schools
               </span>
             </div>
@@ -574,142 +572,14 @@ const Header = () => {
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Menu className="h-6 w-6" />
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.nav
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="border-t bg-white lg:hidden"
-            aria-label="Mobile navigation"
-          >
-            <div className="container-custom py-4">
-              <ul className="space-y-1">
-                <li>
-                  <Link to="/" className={`block rounded-lg px-4 py-3 font-medium ${location.pathname === '/' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className={`block rounded-lg px-4 py-3 font-medium ${isActive('/about') ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}>
-                    About
-                  </Link>
-                </li>
-
-                {/* Schools Dropdown */}
-                <li>
-                  <button
-                    className={`flex w-full items-center justify-between rounded-lg px-4 py-3 font-medium ${mobileDropdown === 'schools' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}
-                    onClick={() => setMobileDropdown(mobileDropdown === 'schools' ? null : 'schools')}
-                  >
-                    Schools
-                    <ChevronDown className={`h-4 w-4 transition-transform ${mobileDropdown === 'schools' ? 'rotate-180' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileDropdown === 'schools' && (
-                      <motion.ul
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="ml-4 space-y-1 overflow-hidden border-l-2 border-gray-200 pl-4 pt-1"
-                      >
-                        <li>
-                          <Link to="/schools/grade-school" className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-600 hover:text-gray-900">
-                            <GraduationCap className="h-4 w-4 text-blue-600" />
-                            Grade School
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/schools/kindergarten" className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-600 hover:text-gray-900">
-                            <Baby className="h-4 w-4 text-yellow-600" />
-                            Kindergarten
-                          </Link>
-                        </li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-
-                <li>
-                  <Link to="/academics" className={`block rounded-lg px-4 py-3 font-medium ${isActive('/academics') ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}>
-                    Academics
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/admissions" className={`block rounded-lg px-4 py-3 font-medium ${isActive('/admissions') ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}>
-                    Admissions
-                  </Link>
-                </li>
-
-                {/* Explore Dropdown */}
-                <li>
-                  <button
-                    className={`flex w-full items-center justify-between rounded-lg px-4 py-3 font-medium ${mobileDropdown === 'explore' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}
-                    onClick={() => setMobileDropdown(mobileDropdown === 'explore' ? null : 'explore')}
-                  >
-                    Explore
-                    <ChevronDown className={`h-4 w-4 transition-transform ${mobileDropdown === 'explore' ? 'rotate-180' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileDropdown === 'explore' && (
-                      <motion.ul
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="ml-4 space-y-1 overflow-hidden border-l-2 border-gray-200 pl-4 pt-1"
-                      >
-                        <li>
-                          <Link to="/school-life" className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-600 hover:text-gray-900">
-                            <Heart className="h-4 w-4 text-red-500" />
-                            School Life
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/gallery" className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-600 hover:text-gray-900">
-                            <Image className="h-4 w-4 text-purple-500" />
-                            Gallery
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/news" className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-600 hover:text-gray-900">
-                            <Newspaper className="h-4 w-4 text-blue-500" />
-                            News & Events
-                          </Link>
-                        </li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-
-                <li>
-                  <Link to="/contact" className={`block rounded-lg px-4 py-3 font-medium ${isActive('/contact') ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`}>
-                    Contact
-                  </Link>
-                </li>
-
-                {/* Mobile CTA */}
-                <li className="pt-2">
-                  <Link
-                    to="/admissions"
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-3 font-semibold text-white"
-                  >
-                    Apply Now
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
     </header>
+
+    {/* Full Screen Mobile Menu */}
+    <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 };

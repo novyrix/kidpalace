@@ -39,7 +39,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2004', title: 'Foundation', description: 'Kid Palace Kindergarten established in Ongata Rongai' },
+  { year: '2004', title: 'Foundation', description: 'Kidpalace Kindergarten established in Ongata Rongai' },
   { year: '2010', title: 'Expansion', description: 'Grade School opened to serve growing community needs' },
   { year: '2017', title: 'CBC Adoption', description: 'Early adoption of Competency-Based Curriculum' },
   { year: 'Today', title: 'Excellence', description: 'Educating 500+ students annually with proven results' },
@@ -55,11 +55,11 @@ const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-24 md:pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={aboutHeroImg}
-            alt="Kid Palace Schools campus"
+            alt="Kidpalace Schools campus"
             className="h-full w-full object-cover object-top opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900" />
@@ -75,7 +75,7 @@ const About = () => {
               <span className="text-yellow-400">Bright Futures</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300">
-              Since 2004, Kid Palace Schools has been the trusted choice for parents
+              Since 2004, Kidpalace Schools has been the trusted choice for parents
               seeking quality education in a nurturing environment.
             </p>
           </div>
@@ -100,7 +100,7 @@ const About = () => {
               </h2>
               <div className="mt-6 space-y-4 text-gray-600">
                 <p>
-                  Kid Palace Schools was founded with a simple vision: create an
+                  Kidpalace Schools was founded with a simple vision: create an
                   exceptional learning environment where children thrive academically,
                   socially, and emotionally.
                 </p>
@@ -115,18 +115,18 @@ const About = () => {
                   child is guaranteed success.
                 </p>
               </div>
-              <div className="mt-8 flex flex-wrap gap-8">
-                <div>
-                  <p className="text-4xl font-bold text-gray-900">20+</p>
-                  <p className="text-sm text-gray-500">Years of Excellence</p>
+              <div className="mt-8 grid grid-cols-3 gap-4 md:flex md:flex-wrap md:gap-8">
+                <div className="text-center md:text-left">
+                  <p className="text-2xl md:text-4xl font-bold text-gray-900">20+</p>
+                  <p className="text-xs md:text-sm text-gray-500">Years of Excellence</p>
                 </div>
-                <div>
-                  <p className="text-4xl font-bold text-gray-900">2000+</p>
-                  <p className="text-sm text-gray-500">Students Educated</p>
+                <div className="text-center md:text-left">
+                  <p className="text-2xl md:text-4xl font-bold text-gray-900">2000+</p>
+                  <p className="text-xs md:text-sm text-gray-500">Students Educated</p>
                 </div>
-                <div>
-                  <p className="text-4xl font-bold text-gray-900">50+</p>
-                  <p className="text-sm text-gray-500">Dedicated Staff</p>
+                <div className="text-center md:text-left">
+                  <p className="text-2xl md:text-4xl font-bold text-gray-900">50+</p>
+                  <p className="text-xs md:text-sm text-gray-500">Dedicated Staff</p>
                 </div>
               </div>
             </motion.div>
@@ -140,7 +140,7 @@ const About = () => {
             >
               <img
                 src={teamImg}
-                alt="Kid Palace Schools team"
+                alt="Kidpalace Schools team"
                 className="rounded-2xl shadow-lg"
               />
               <div className="absolute -bottom-6 -left-6 rounded-xl bg-blue-600 p-6 text-white shadow-lg">
@@ -275,7 +275,7 @@ const About = () => {
               What We Stand For
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-              These principles guide everything we do at Kid Palace Schools
+              These principles guide everything we do at Kidpalace Schools
             </p>
           </motion.div>
 
@@ -313,7 +313,7 @@ const About = () => {
           >
             <h2 className="font-['Poppins'] text-3xl font-bold text-white md:text-4xl">
               Ready to Join the{' '}
-              <span className="text-yellow-400">Kid Palace</span> Family?
+              <span className="text-yellow-400">Kidpalace</span> Family?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
               Give your child the gift of quality education in a nurturing environment.

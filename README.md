@@ -1,10 +1,10 @@
-# Kid Palace Schools Website
+# Kidpalace Schools Website
 
-A modern, responsive React website for Kid Palace Schools - a group of schools including Grade School and Kindergarten located in Ongata Rongai, Kenya.
+A modern, responsive React website for Kidpalace Schools - a group of schools including Grade School and Kindergarten located in Ongata Rongai, Kenya.
 
 ## 🏫 About
 
-Kid Palace Schools provides quality education from early childhood through junior secondary school. This website serves as a parent-facing informational platform highlighting academics, admissions, school life, and contact details.
+Kidpalace Schools provides quality education from early childhood through junior secondary school. This website serves as a parent-facing informational platform highlighting academics, admissions, school life, and contact details.
 
 ## 🚀 Tech Stack
 
@@ -117,8 +117,8 @@ prisma/
 
 ## 📝 License
 
-All Rights Reserved - Kid Palace Schools
+All Rights Reserved - Kidpalace Schools
 
 ---
 
-Built with ❤️ for Kid Palace Schools
+Built with ❤️ for Kidpalace Schools

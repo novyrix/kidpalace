@@ -29,7 +29,7 @@ const heroSlides = [
     image: heroImg1,
     title: [
       { text: 'Welcome to ' },
-      { text: 'Kid Palace', highlight: true },
+      { text: 'Kidpalace', highlight: true },
       { text: ' Schools' },
     ],
     subtitle:
@@ -135,7 +135,7 @@ const Home = () => {
               <div className="relative z-10 overflow-hidden rounded-3xl">
                 <img
                   src={aboutImg}
-                  alt="Students learning at Kid Palace Schools"
+                  alt="Students learning at Kidpalace Schools"
                   className="aspect-[4/3] w-full object-cover object-top"
                 />
               </div>
@@ -146,10 +146,10 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 z-20 rounded-2xl bg-gray-900 p-6 text-white shadow-2xl"
+                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 z-20 rounded-xl md:rounded-2xl bg-gray-900 p-3 md:p-6 text-white shadow-2xl"
               >
-                <p className="text-5xl font-bold text-yellow-400">20+</p>
-                <p className="mt-1 text-sm text-gray-300">Years of Excellence</p>
+                <p className="text-3xl md:text-5xl font-bold text-yellow-400">20+</p>
+                <p className="mt-1 text-xs md:text-sm text-gray-300">Years of Excellence</p>
               </motion.div>
             </motion.div>
 
@@ -162,7 +162,7 @@ const Home = () => {
                 <span className="text-yellow-500">One Child</span> at a Time
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-gray-600">
-                With carefully thought out and implemented Kid Palace specifics,
+                With carefully thought out and implemented Kidpalace specifics,
                 the school carves a niche for itself as the preferred place for
                 knowledge transformation where every child is guaranteed success.
               </p>
@@ -201,7 +201,7 @@ const Home = () => {
               <span className="text-blue-600">Every Age</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Kid Palace offers quality education from early childhood through grade school
+              Kidpalace offers quality education from early childhood through grade school
             </p>
           </motion.div>
 
@@ -221,7 +221,7 @@ const Home = () => {
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={gradeSchoolImg}
-                    alt="Kid Palace Grade School students"
+                    alt="Kidpalace Grade School students"
                     className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -231,7 +231,7 @@ const Home = () => {
                     Grades 1-9
                   </div>
                   <h3 className="font-['Poppins'] text-2xl font-bold text-gray-900 md:text-3xl">
-                    Kid Palace Grade School
+                    Kidpalace Grade School
                   </h3>
                   <p className="mt-3 text-gray-600">
                     Comprehensive primary and junior secondary education with
@@ -254,7 +254,7 @@ const Home = () => {
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={kindergartenImg}
-                    alt="Kid Palace Kindergarten children"
+                    alt="Kidpalace Kindergarten children"
                     className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -264,7 +264,7 @@ const Home = () => {
                     6 months - 6 years
                   </div>
                   <h3 className="font-['Poppins'] text-2xl font-bold text-gray-900 md:text-3xl">
-                    Kid Palace Kindergarten
+                    Kidpalace Kindergarten
                   </h3>
                   <p className="mt-3 text-gray-600">
                     Nurturing early childhood development in a safe, homely
@@ -292,7 +292,7 @@ const Home = () => {
             className="text-center"
           >
             <span className="inline-block rounded-full bg-green-100 px-4 py-1.5 text-sm font-semibold text-green-700">
-              Why Kid Palace
+              Why Kidpalace
             </span>
             <h2 className="mt-4 font-['Poppins'] text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
               What Makes Us <span className="text-green-600">Different</span>
@@ -427,7 +427,7 @@ const Home = () => {
               className="mt-6 font-['Poppins'] text-3xl font-bold text-white md:text-4xl lg:text-5xl"
             >
               Ready to Join{' '}
-              <span className="text-yellow-400">Kid Palace Schools?</span>
+              <span className="text-yellow-400">Kidpalace Schools?</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}

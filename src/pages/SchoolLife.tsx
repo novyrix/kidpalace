@@ -110,7 +110,7 @@ const SchoolLife = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 pt-40 pb-20 lg:pb-28">
+      <section className="relative bg-gray-900 pt-24 md:pt-40 pb-20 lg:pb-28">
         <div className="absolute inset-0">
           <img
             src={heroImg}
@@ -144,7 +144,7 @@ const SchoolLife = () => {
               className="mt-6 text-xl text-gray-300"
             >
               Discover the vibrant activities, events, and experiences that make
-              Kid Palace Schools special. We believe in developing the whole child.
+              Kidpalace Schools special. We believe in developing the whole child.
             </motion.p>
             <motion.div variants={fadeIn} className="mt-8 flex flex-wrap gap-4">
               <Button as="link" to="/gallery" variant="yellow" size="lg">
@@ -434,7 +434,7 @@ const SchoolLife = () => {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
               Browse our photo gallery to see students enjoying the various activities
-              and events at Kid Palace Schools.
+              and events at Kidpalace Schools.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button as="link" to="/gallery" variant="primary" size="lg">

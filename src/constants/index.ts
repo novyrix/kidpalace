@@ -125,7 +125,7 @@ export const contactInfo = {
 // School Information
 export const schoolInfo = {
   gradeSchool: {
-    name: 'Kid Palace Grade School',
+    name: 'Kidpalace Grade School',
     description: 'The primary vision of the institution is to execute a learning program informed by the need to provide a balance between the child interests and the parents\' interests, academic excellence, and holistic development.',
     ageRange: 'Grades 1-9',
     features: [
@@ -137,7 +137,7 @@ export const schoolInfo = {
     ],
   },
   kindergarten: {
-    name: 'Kid Palace Kindergarten',
+    name: 'Kidpalace Kindergarten',
     description: 'An exclusive school for the little ones, catering for children from the age of 6 months to six years. Located in a pleasant, homely and quiet environment far from the noisy road.',
     ageRange: '6 months - 6 years',
     features: [

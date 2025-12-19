@@ -109,7 +109,7 @@ const HeroCarousel = ({
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <div className="h-2 w-2 rounded-full bg-yellow-400" />
                 <span className="text-sm font-medium text-white">
-                  Welcome to Kid Palace Schools
+                  Welcome to Kidpalace Schools
                 </span>
               </div>
 

@@ -45,19 +45,19 @@ const Footer = () => {
     <footer className="bg-gray-900">
       {/* CTA Section */}
       <div className="border-b border-gray-800">
-        <div className="container-custom py-12">
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+        <div className="container-custom py-8 md:py-12">
+          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
             <div>
-              <h3 className="font-['Playfair_Display'] text-2xl font-bold text-white md:text-3xl">
-                Ready to Join <span className="text-yellow-400">Kid Palace</span>?
+              <h3 className="font-['Playfair_Display'] text-xl md:text-2xl font-bold text-white lg:text-3xl">
+                Ready to Join <span className="text-yellow-400">Kidpalace</span>?
               </h3>
-              <p className="mt-2 text-gray-400">
+              <p className="mt-2 text-sm md:text-base text-gray-400">
                 Give your child the foundation for a successful future.
               </p>
             </div>
             <Link
               to="/admissions"
-              className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-8 py-4 font-semibold text-gray-900 transition-all hover:bg-yellow-400 hover:gap-3"
+              className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-6 py-3 md:px-8 md:py-4 font-semibold text-gray-900 transition-all hover:bg-yellow-400 hover:gap-3"
             >
               Start Application
               <ArrowRight className="h-5 w-5" />
@@ -77,12 +77,12 @@ const Footer = () => {
             >
               <img 
                 src="/logos/Kidpalace grade school logo-transparent.png" 
-                alt="Kid Palace Schools" 
+                alt="Kidpalace Schools" 
                 className="h-16 w-auto"
               />
               <div>
                 <span className="font-['Playfair_Display'] text-white block text-lg leading-tight">
-                  Kid Palace
+                  Kidpalace
                 </span>
                 <span className="font-['Nunito'] text-red-400 text-sm font-semibold">
                   Schools
@@ -209,33 +209,33 @@ const Footer = () => {
 
       {/* Newsletter Section */}
       <div className="border-t border-gray-800 bg-gray-800/50">
-        <div className="container-custom py-12">
+        <div className="container-custom py-8 md:py-12">
           <div className="mx-auto max-w-2xl text-center">
-            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-white md:text-3xl">
+            <h3 className="font-['Playfair_Display'] text-xl md:text-2xl font-bold text-white lg:text-3xl">
               Be in the Know
             </h3>
-            <p className="mt-3 text-gray-400">
-              Subscribe to our newsletter for the latest news, events, and updates from Kid Palace Schools.
+            <p className="mt-3 text-sm md:text-base text-gray-400">
+              Subscribe to our newsletter for the latest news, events, and updates from Kidpalace Schools.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 max-w-md rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-white placeholder-gray-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                placeholder="Enter your email"
+                className="flex-1 max-w-md rounded-lg border border-gray-700 bg-gray-900 px-4 py-3 text-white placeholder-gray-500 focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 text-sm md:text-base"
                 required
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-yellow-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:bg-yellow-400"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-yellow-500 px-5 py-3 font-semibold text-gray-900 transition-all hover:bg-yellow-400 text-sm md:text-base"
               >
                 {subscribed ? 'Subscribed!' : 'Subscribe'}
                 <Send className="h-4 w-4" />
               </button>
             </form>
             {subscribed && (
-              <p className="mt-3 text-green-400">Thank you for subscribing! We'll keep you updated.</p>
+              <p className="mt-3 text-green-400 text-sm">Thank you for subscribing! We'll keep you updated.</p>
             )}
           </div>
         </div>
@@ -245,7 +245,7 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="container-custom flex flex-col items-center justify-between gap-4 py-6 text-center md:flex-row md:text-left">
           <p className="text-gray-500">
-            © {currentYear} Kid Palace Schools. All Rights Reserved.
+            © {currentYear} Kidpalace Schools. All Rights Reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-gray-500 transition-colors hover:text-white">

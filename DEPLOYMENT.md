@@ -1,4 +1,4 @@
-# Kid Palace Schools - Deployment Instructions
+# Kidpalace Schools - Deployment Instructions
 
 ## Build Output
 The production build is in the `dist/` folder. Upload all contents of this folder to your hosting provider.

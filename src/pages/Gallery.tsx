@@ -78,7 +78,7 @@ const Gallery = () => {
       : galleryImages.filter((img) => img.category === activeCategory);
 
   return (
-    <div className="pt-32">
+    <div className="pt-20 md:pt-32">
       {/* Hero Section */}
       <section className="bg-blue-900 py-20 lg:py-28">
         <div className="container-custom text-center text-white">
