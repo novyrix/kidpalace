@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { Calendar, ArrowRight, Bell, Newspaper, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button, SocialFeed } from '../components/ui';
+import { Button, SocialFeedLive } from '../components/ui';
 
 import newsImg1 from '../assets/images/education/education-1.jpg';
 import newsImg2 from '../assets/images/sports/sports-1.jpg';
@@ -328,7 +328,7 @@ const News = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <SocialFeed />
+            <SocialFeedLive maxPosts={6} />
           </motion.div>
         </div>
       </section>
